@@ -52,8 +52,29 @@ class Materia:
  
     def __str__(self):
         return f"Materia({self.nombre}, {self.creditos} créditos, dificultad {self.dificultad})"
+    
+
  
+class ActividadEstudio:
+    """Clase para representar una sesión de estudio"""
  
+    def __init__(self, materia_nombre, descripcion, duracion_min, fecha=None):
+        self.materia_nombre = materia_nombre
+        self.descripcion = descripcion
+        self.duracion_min = duracion_min
+        # Si no se da fecha, se usa la actual
+        if fecha is None:
+            self.fecha = date.today()
+        else:
+            self.fecha = fecha
+ 
+    def get_horas(self):
+        """Retorna la duración en horas (con decimales)"""
+        return round(self.duracion_min / 60, 2)
+ 
+    def __str__(self):
+        return (f"[{self.fecha}] {self.materia_nombre} - "
+                f"{self.descripcion} ({self.duracion_min} min)")
 
 def main():
     print("Proyecto POO - Iniciado")
