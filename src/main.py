@@ -39,6 +39,21 @@ class Usuario:
  
     def __str__(self):
         return f"Usuario({self.nombre}, {self.carrera})"
+    
+
+class Materia:
+    """Clase para representar una materia del estudiante"""
+ 
+    def __init__(self, nombre, creditos=3, dificultad="media"):
+        self.nombre = nombre
+        self.creditos = creditos
+        # dificultad puede ser: baja, media, alta
+        self.dificultad = dificultad
+ 
+    def __str__(self):
+        return f"Materia({self.nombre}, {self.creditos} créditos, dificultad {self.dificultad})"
+ 
+ 
 
 def main():
     print("Proyecto POO - Iniciado")
