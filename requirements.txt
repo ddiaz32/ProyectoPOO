@@ -1,0 +1,4 @@
+# Dependencias del proyecto ProyectoPOO
+# Añade aquí las librerías necesarias, ej:
+# requests>=2.31.0
+# pandas>=2.0.0
