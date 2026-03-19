@@ -1,6 +1,8 @@
 """
 Punto de entrada principal de la aplicación.
 """
+from datetime import datetime, date
+
 class Usuario:
     """Clase para representar a un estudiante"""
  
@@ -76,6 +78,25 @@ class ActividadEstudio:
         return (f"[{self.fecha}] {self.materia_nombre} - "
                 f"{self.descripcion} ({self.duracion_min} min)")
 
+
+class ObjetivoEstudio:
+    """Clase para representar una meta de estudio"""
+ 
+    def __init__(self, descripcion, horas_meta_semana, materia_nombre="General"):
+        self.descripcion = descripcion
+        self.horas_meta_semana = horas_meta_semana
+        self.materia_nombre = materia_nombre
+        self.cumplido = False
+ 
+    def marcar_cumplido(self):
+        self.cumplido = True
+        print(f"  🎉 Objetivo '{self.descripcion}' marcado como cumplido!")
+ 
+    def __str__(self):
+        estado = "✓ Cumplido" if self.cumplido else "⏳ Pendiente"
+        return f"Objetivo: {self.descripcion} | {self.horas_meta_semana}h/semana | {estado}"
+    
+    
 def main():
     print("Proyecto POO - Iniciado")
 
